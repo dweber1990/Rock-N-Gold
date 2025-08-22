@@ -1,0 +1,53 @@
+﻿@inherits LayoutComponentBase
+@* <div class="page">
+    <div class="sidebar">
+        <NavMenu />
+    </div>
+
+    <main>
+        <div class="top-row px-4">
+            <a href="https://learn.microsoft.com/aspnet/core/" target="_blank">About</a>
+        </div>
+
+        <article class="content px-4">
+            @Body
+        </article>
+    </main>
+</div> *@
+
+<div class="container-fluid">
+    <div class="row top-row">
+        <div class="col-sm-4">
+            <a href="">
+                <img src="RNGLogo.jpg" class="RNGLogo" />
+            </a>
+        </div>
+        <div class="col-sm-4" style="text-align:center">
+            <span>Rock-N-Gold Club</span>
+        </div>
+        <div class="col-sm-4" style="text-align:right">
+            <span style="font-size:17px">Facebook page: </span>
+            <a href="@FACEBOOK_LINK" target="_blank">
+                <img class="facebook-logo" src="FacebookLogo.png"
+                     title="Rock-N-Gold Facebook Page" alt="facebook logo" />
+            </a>
+        </div>
+    </div>
+</div>
+<NavMenu @ref="_navMenuRef" />
+<div class="container content">
+    @Body
+</div>
+<div class="footer">
+    <h3>Rock-N-Gold Club</h3>
+    <h3>Pahrump, NV</h3>
+    <a href="@FACEBOOK_LINK" target="_blank">
+        <img class="facebook-logo" src="FacebookLogo.png"
+             title="Rock-N-Gold Facebook Page" alt="facebook logo" />
+    </a>
+</div>
+
+@code {
+    public const string FACEBOOK_LINK = "https://www.facebook.com/groups/589968043861208/";
+    public static NavMenu? _navMenuRef;
+}

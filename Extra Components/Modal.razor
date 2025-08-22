@@ -1,0 +1,35 @@
+﻿@if (Opened)
+{
+    <!-- The Modal -->
+    <div class="modal blazorModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">@Title</h4>
+                    <button type="button" class="close" @onclick="CloseButtonClicked">&times;</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    @BodyContent
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">                   
+                    @FooterContent
+                </div>
+
+            </div>
+        </div>
+    </div>
+}
+
+@code {
+    [Parameter] public string? Title { get; set; }
+    [Parameter] public RenderFragment? BodyContent { get; set; }
+    [Parameter] public RenderFragment? FooterContent { get; set; }
+    [Parameter] public bool Opened { get; set; }
+    [Parameter] public EventCallback CloseButtonClicked { get; set; }
+}

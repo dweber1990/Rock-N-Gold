@@ -1,0 +1,95 @@
+﻿li {
+    margin-bottom: 16px;
+}
+
+.calendarHeader {
+    font-size: 23px;
+    text-align: center;
+    padding-bottom: 5px;
+}
+
+.calendarHeader button {
+    float: right;
+    margin-left: 5px;
+    width: 70px;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.calendar {
+    background-color: white;
+    border: 3px solid darkgoldenrod;
+    table-layout: fixed;
+}
+
+.calendar thead {
+    border: 3px solid darkgoldenrod;
+}
+
+.calendar th {
+    text-align: center;
+    background-color: gold;
+    border-right: 3px solid darkgoldenrod;
+}
+
+.calendar tbody tr {
+    height: 11rem;
+}
+
+.eventDate:hover {
+    background-color: goldenrod;
+    cursor: pointer;
+}
+
+.modalEventFirstCol tr td:first-child {
+    vertical-align: top;
+    padding-right: 6px;
+}
+
+@media (max-width: 991px) {
+    .calendarHeader button {
+        width: 60px;
+    }
+
+    .custom-table-responsive {
+        overflow: scroll;
+        height: 450px;
+        border: 1px solid darkgoldenrod;
+    }
+
+    .calendar {
+        width: 850px;
+        margin-bottom: 0;
+    }
+}
+
+@media (max-width: 767px) {
+    .calendarHeader {
+        font-size: 21px;
+    }
+    
+    .calendarHeader button {
+        width: 47px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 575px) {
+    .calendarHeader {
+        font-size: 23px;
+        align-items: center;
+    }
+    
+    .calendarHeader button {
+        margin-left: 0;
+        width: 60px;
+    }
+
+    .calendarHeader button:nth-child(2) {
+        float: none;
+    }
+
+    .calendarHeader button:nth-child(3) {
+        float: left;
+    }  
+}

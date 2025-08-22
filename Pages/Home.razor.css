@@ -1,0 +1,29 @@
+﻿.GoldRushSection {
+    align-items: center;
+    margin-bottom: 45px;
+}
+
+img[src="jebediah.jpg"] {
+    width: 90%;
+    margin-bottom: 13px;
+}
+
+a {
+    color: darkgoldenrod;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.MobileScreenEventsLink {
+    display: none;
+}
+
+@media (max-width: 575px) {
+    .MobileScreenEventsLink {
+        display: initial;
+    }
+
+    .WideScreenEventsLink {
+        display: none;
+    }
+}

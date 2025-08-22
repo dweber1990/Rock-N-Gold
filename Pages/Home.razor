@@ -1,0 +1,30 @@
+﻿@page "/"
+
+<PageTitle>Home</PageTitle>
+
+<h4>Hello, and welcome to the official website of Rock-N-Gold Club of Pahrump Nevada!</h4>
+<br />
+<div class="row GoldRushSection">
+	<div class="col-md-5">
+		<img src="jebediah.jpg" />
+	</div>
+	<div class="col-md-7">
+		<p>
+			On January 24, 1848, James Wilson Marshall found flakes of gold in the American River at Sutter's Mill which was near Coloma, California
+			at the base of the Sierra Nevada Mountains. This discovery led to the launch of the California Gold Rush in 1849. The Gold Rush lasted
+			roughly a decade, slowly coming to an end by the late 1850s, but they certainly didn't find it all and we're contuining the search!
+		</p>
+	</div>
+</div>
+<p>
+	<b>If you want to become a member, come to one of our monthly meetings in order to sign up.</b> To see event information, our Facebook page, or the
+	current price of gold and silver, check out the links below:
+	<br />
+	<br />
+	<a class="WideScreenEventsLink" href="/events">CLUB EVENTS</a>
+	<a class="MobileScreenEventsLink" href="/events" @onclick="@(() => MainLayout._navMenuRef?.NavLinkClick("EVENTS-h"))">CLUB EVENTS</a>
+	&nbsp; | &nbsp;
+	<a href="@MainLayout.FACEBOOK_LINK" target="_blank">CLUB FACEBOOK PAGE</a>
+	&nbsp; | &nbsp;
+	<a href="https://goldprice.org/" target="_blank">GOLDPRICE.ORG</a>
+</p>

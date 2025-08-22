@@ -1,0 +1,109 @@
+﻿<div class="mobileMenu navbar navbar-light">
+    <div class="container-fluid">
+        <img src="RNGLogo.jpg" class="mobileRNGLogo" />
+        <span>@CurrentTab</span>
+        <button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+</div>
+
+@*<div class="@NavMenuCssClass nav-scrollable" @onclick="ToggleNavMenu">
+    <nav class="flex-column">
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
+                <span class="bi bi-house-door-fill-nav-menu" aria-hidden="true"></span> Home
+            </NavLink>
+        </div>
+        <div class="nav-item px-3"> 
+            <NavLink class="nav-link" href="counter">
+                <span class="bi bi-plus-square-fill-nav-menu" aria-hidden="true"></span> Counter
+            </NavLink>
+        </div>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="weather">
+                <span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> Weather
+            </NavLink>
+        </div>
+    </nav>
+</div>*@
+
+<div class="row @NavMenuCssClass">
+    @if (string.IsNullOrEmpty(NavMenuCssClass))
+    {
+        <div class="col-sm-1">
+        </div>
+        <div class="col-sm-2 nav-item">       
+            <NavLink class="nav-link" href="" Match="NavLinkMatch.All" @onclick="@(() => NavLinkClick("HOME"))">Home</NavLink>
+        </div>
+        <div class="col-sm-2 nav-item">
+            <NavLink class="nav-link" href="rock" @onclick="@(() => NavLinkClick("ROCK"))">Rock</NavLink>
+        </div>
+        <div class="col-sm-2 nav-item">
+            <NavLink class="nav-link" href="gold" @onclick="@(() => NavLinkClick("GOLD"))">Gold</NavLink>
+        </div>
+        <div class="col-sm-2 nav-item">
+            <NavLink class="nav-link" href="events" @onclick="@(() => NavLinkClick("EVENTS"))">Events</NavLink>
+        </div>
+        <div class="col-sm-2 nav-item">
+            <NavLink class="nav-link" href="about" @onclick="@(() => NavLinkClick("ABOUT"))">About</NavLink>
+        </div>
+        <div class="col-sm-1">
+        </div>
+    }
+    else
+    {
+        <div class="col-1">
+        </div>
+        <div class="col-2 nav-item">
+            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">Home</NavLink>
+        </div>
+        <div class="col-2 nav-item">
+            <NavLink class="nav-link" href="rock">Rock</NavLink>
+        </div>
+        <div class="col-2 nav-item">
+            <NavLink class="nav-link" href="gold">Gold</NavLink>
+        </div>
+        <div class="col-2 nav-item">
+            <NavLink class="nav-link" href="events">Events</NavLink>
+        </div>
+        <div class="col-2 nav-item">
+            <NavLink class="nav-link" href="about">About</NavLink>
+        </div>
+        <div class="col-1">
+        </div>
+    }
+</div>
+
+@code {
+    private string CurrentTab = "HOME";
+
+    //private bool collapseNavMenu = true;
+
+    //private string? NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+    private string? NavMenuCssClass = "collapse";
+
+    private void ToggleNavMenu()
+    {
+        //collapseNavMenu = !collapseNavMenu;
+        NavMenuCssClass = string.IsNullOrEmpty(NavMenuCssClass) ? "collapse" : null;
+    }
+
+    public void NavLinkClick(string tabName)
+    {
+        if (tabName == "EVENTS-h")
+        {
+            CurrentTab = "EVENTS";
+            if (string.IsNullOrEmpty(NavMenuCssClass))
+                NavMenuCssClass = "collapse";
+
+            StateHasChanged();
+        }
+
+        else
+        {
+            CurrentTab = tabName;
+            ToggleNavMenu();
+        }
+    }
+}
